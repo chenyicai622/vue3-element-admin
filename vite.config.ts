@@ -11,5 +11,12 @@ export default defineConfig({
 		alias: {
 			'@': resolve('src')
 		}
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: '@import "@/src/styles/index.scss";' // 添加公共样式
+			}
+		}
 	}
 })

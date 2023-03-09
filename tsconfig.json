@@ -19,7 +19,8 @@
 			// 路径别名，通过某个标识符指定特定的目录
 			"@": ["src"],
 			"@/*": ["src/*"]
-		}
+		},
+		"types": ["element-plus/global"] // volar支持
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
 	"references": [{ "path": "./tsconfig.node.json" }],
