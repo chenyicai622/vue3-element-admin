@@ -1,3 +1,16 @@
 # eslint 忽略检查
-node_modules
-dist
+dist/
+node_modules/
+.gitignore
+*.sh
+*.md
+*.woff
+*.ttf
+.vscode
+.idea
+/public
+/docs
+.husky
+.local
+/bin
+Dockerfile

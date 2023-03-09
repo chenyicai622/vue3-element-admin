@@ -1,17 +1,28 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "ignoreDeprecations": "5.0"
-  },
-
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+	"compilerOptions": {
+		"target": "ESNext", // 使用的es版本  esnext表示最高
+		"useDefineForClassFields": true,
+		"module": "ESNext", // tsc编译后的规范文件
+		"allowJs": true, // 是否允许引入js文件
+		"moduleResolution": "Node", // 编译的模块化的方案
+		"strict": true, // 是否采用严格模式
+		"strictNullChecks": false, // 限制对空值的检查
+		"jsx": "preserve", // jsx代码编译后的规范
+		"resolveJsonModule": true,
+		"isolatedModules": true, // 将每个文件作为单独的模块
+		"esModuleInterop": true, // 允许ts文件中，同时引入 es和commonJS规范的文件
+		"lib": ["ESNext", "DOM"], // 编译过程中需要引入的库文件的列表
+		"skipLibCheck": true, // 跳过声明文件的类型检查
+		"baseUrl": "./", // 开始查找ts文件的基础目录
+		"noEmit": true,
+		"paths": {
+			// 路径别名，通过某个标识符指定特定的目录
+			"@": ["src"],
+			"@/*": ["src/*"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+	"references": [{ "path": "./tsconfig.node.json" }],
+	// ts编译和检查排除的文件或者文件夹
+	"exclude": ["node_modules", "dist", "**/*.js"]
 }
